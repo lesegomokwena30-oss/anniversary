@@ -7,14 +7,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,700;1,700&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --cream: #f5ece2;
-      --rose: #c97b84;
-      --deep-rose: #9b4f58;
-      --gold: #c8a96e;
-      --dark: #1a1008;
-      --dark2: #251810;
-      --text-light: #f0e6d8;
-      --text-muted: #b09880;
+      --cream: #fff8f2;
+      --rose: #d4607a;
+      --deep-rose: #a8394f;
+      --gold: #b5763a;
+      --dark: #fff0f3;
+      --dark2: #ffffff;
+      --text-light: #2e1a20;
+      --text-muted: #a07080;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,6 +22,9 @@
 
     body {
       background-color: var(--dark);
+      background-image:
+        radial-gradient(ellipse 120% 60% at 80% 10%, rgba(255,182,193,0.4) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 80% at 10% 90%, rgba(255,218,185,0.35) 0%, transparent 55%);
       color: var(--text-light);
       font-family: 'Jost', sans-serif;
       font-weight: 300;
@@ -35,7 +38,7 @@
       width: 100%; height: 100%;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.32;
+      opacity: 0.6;
     }
 
     /* ── HERO ── */
@@ -57,8 +60,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,123,132,0.18) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 80% at 20% 80%, rgba(200,169,110,0.10) 0%, transparent 60%);
+        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(212,96,122,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 80% at 20% 80%, rgba(181,118,58,0.08) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -67,7 +70,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.38em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--deep-rose);
       opacity: 0;
       animation: fadeUp 1s ease forwards 0.3s;
     }
@@ -78,7 +81,7 @@
       font-size: clamp(7rem, 22vw, 16rem);
       line-height: 0.85;
       color: transparent;
-      -webkit-text-stroke: 1px rgba(200,169,110,0.3);
+      -webkit-text-stroke: 1px rgba(212,96,122,0.2);
       position: absolute;
       top: 50%;
       left: 50%;
@@ -95,7 +98,7 @@
       font-size: clamp(2.6rem, 7vw, 5.5rem);
       font-weight: 700;
       line-height: 1.1;
-      color: var(--cream);
+      color: var(--text-light);
       margin: 1.2rem 0 0.7rem;
       opacity: 0;
       animation: fadeUp 1s ease forwards 0.6s;
@@ -107,7 +110,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: clamp(1.1rem, 2.5vw, 1.55rem);
-      color: var(--gold);
+      color: var(--deep-rose);
       letter-spacing: 0.06em;
       opacity: 0;
       animation: fadeUp 1s ease forwards 0.9s;
@@ -126,7 +129,7 @@
     .divider-line {
       flex: 1;
       height: 1px;
-      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      background: linear-gradient(to right, transparent, var(--rose), transparent);
     }
 
     .divider-icon { color: var(--rose); font-size: 1.2rem; }
@@ -149,12 +152,9 @@
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--text-muted);
-    }
-
-    .scroll-line {
       width: 1px;
       height: 50px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
+      background: linear-gradient(to bottom, var(--rose), transparent);
       animation: scrollPulse 2s ease-in-out infinite;
     }
 
@@ -176,10 +176,12 @@
       width: 100%;
       text-align: center;
       padding: 3.5rem 2.5rem;
-      background: var(--dark2);
-      border: 1px solid rgba(200,169,110,0.18);
-      border-radius: 6px;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(212,96,122,0.18);
+      border-radius: 12px;
       position: relative;
+      box-shadow: 0 4px 30px rgba(212,96,122,0.08);
     }
 
     .card-intro::after {
@@ -196,7 +198,7 @@
       font-size: 0.65rem;
       letter-spacing: 0.4em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--deep-rose);
       margin-bottom: 1.2rem;
     }
 
@@ -204,7 +206,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1.2rem, 2.8vw, 1.7rem);
       line-height: 1.75;
-      color: var(--text-light);
+      color: #4a2830;
     }
 
     .card-intro-text em { color: var(--rose); font-style: italic; }
@@ -212,25 +214,27 @@
     /* Memory cards */
     .memory-card {
       width: 100%;
-      background: var(--dark2);
-      border: 1px solid rgba(200,169,110,0.13);
-      border-radius: 6px;
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(212,96,122,0.13);
+      border-radius: 12px;
       padding: 2.8rem 3rem;
       position: relative;
       overflow: hidden;
       transition: transform 0.35s ease, box-shadow 0.35s ease;
+      box-shadow: 0 2px 20px rgba(212,96,122,0.07);
     }
 
     .memory-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 50px rgba(201,123,132,0.12);
+      box-shadow: 0 12px 40px rgba(212,96,122,0.15);
     }
 
     .memory-card::before {
       content: '';
       position: absolute;
       left: 0; top: 15%; bottom: 15%;
-      width: 2px;
+      width: 3px;
       background: linear-gradient(to bottom, transparent, var(--rose), transparent);
       border-radius: 2px;
     }
@@ -238,14 +242,14 @@
     .memory-card.alt::before {
       left: auto;
       right: 0;
-      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      background: linear-gradient(to bottom, transparent, var(--deep-rose), transparent);
     }
 
     .card-heading {
       font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: clamp(1.3rem, 3vw, 1.75rem);
-      color: var(--cream);
+      color: var(--deep-rose);
       margin-bottom: 0.9rem;
       line-height: 1.2;
     }
@@ -254,7 +258,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1.05rem, 2vw, 1.25rem);
       line-height: 1.85;
-      color: var(--text-light);
+      color: #4a2830;
     }
 
     /* Closing card */
@@ -262,10 +266,12 @@
       width: 100%;
       text-align: center;
       padding: 4rem 2.5rem;
-      background: linear-gradient(135deg, rgba(37,24,16,0.9) 0%, rgba(26,16,8,1) 100%);
-      border: 1px solid rgba(200,169,110,0.25);
-      border-radius: 6px;
+      background: linear-gradient(135deg, rgba(212,96,122,0.12) 0%, rgba(255,218,185,0.2) 100%);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(212,96,122,0.25);
+      border-radius: 12px;
       position: relative;
+      box-shadow: 0 4px 30px rgba(212,96,122,0.1);
     }
 
     .card-closing::before,
@@ -283,7 +289,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: clamp(1.4rem, 3.5vw, 2rem);
-      color: var(--cream);
+      color: #3a1a22;
       line-height: 1.65;
       margin-bottom: 2rem;
     }
@@ -305,7 +311,7 @@
       font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: clamp(2rem, 5vw, 3rem);
-      color: var(--gold);
+      color: var(--deep-rose);
     }
 
     /* ── FOOTER ── */
@@ -314,7 +320,7 @@
       z-index: 1;
       text-align: center;
       padding: 2.5rem;
-      border-top: 1px solid rgba(200,169,110,0.1);
+      border-top: 1px solid rgba(212,96,122,0.15);
       color: var(--text-muted);
       font-size: 0.72rem;
       letter-spacing: 0.15em;
@@ -485,7 +491,7 @@ function resize() {
 resize();
 window.addEventListener('resize', resize);
 
-const COLORS = ['#c97b84','#c8a96e','#f5ece2','#9b4f58'];
+const COLORS = ['#d4607a','#e8a0b0','#a8394f','#f4c2cc','#e07090'];
 
 function createPetal() {
   return {
